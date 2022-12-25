@@ -14,4 +14,7 @@ return {
 
   -- Comment out lines or blocks quickly
   { "numToStr/Comment.nvim", config = true, keys = { "gcc", "gbc", "gc", "gb" } },
+
+  -- Configure LSP for neovim configuration
+  { "folke/neodev.nvim", config = true, lazy = false },
 }
