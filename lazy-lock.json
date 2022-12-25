@@ -1,4 +1,5 @@
 {
+  "Comment.nvim": { "branch": "master", "commit": "45dc21a71ad1450606f5e98261badb28db59d74c" },
   "catppuccin": { "branch": "main", "commit": "55f43a952856bc0029e6cef066297c6cfab3451d" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063" },

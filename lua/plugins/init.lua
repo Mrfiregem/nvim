@@ -11,4 +11,7 @@ return {
 
   -- Git / version control
   { "lewis6991/gitsigns.nvim", config = true },
+
+  -- Comment out lines or blocks quickly
+  { "numToStr/Comment.nvim", config = true, keys = { "gcc", "gbc", "gc", "gb" } },
 }
