@@ -23,4 +23,14 @@ o.splitright = true
 o.splitbelow = true
 
 -- Set options for 'nvim-cmp' completion menu
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+o.completeopt = { "menu", "menuone", "noselect" }
+
+-- Show whitespace characters
+o.list = true
+o.listchars = {
+  tab = [[» ]],
+  trail = [[·]],
+  extends = [[›]],
+  precedes = [[‹]],
+  nbsp = [[~]],
+}
