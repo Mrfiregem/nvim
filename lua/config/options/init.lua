@@ -14,7 +14,7 @@ o.relativenumber = true
 o.expandtab = true
 o.shiftwidth = 2
 
--- Case-insensitibe search unless capital letters are used
+-- Case-insensitive search unless capital letters are used
 o.ignorecase = true
 o.smartcase = true
 
