@@ -6,7 +6,7 @@ return {
   "neovim/nvim-lspconfig",
 
   -- Colorschemes
-  { "catppuccin/nvim", name = "catppuccin", lazy = true },
+  { "catppuccin/nvim", name = "catppuccin" },
   "rebelot/kanagawa.nvim",
 
   -- Git / version control
