@@ -19,5 +19,5 @@ return {
   { "folke/neodev.nvim", config = true, lazy = false },
 
   -- Better window navigation functions
-  "mrjones2014/smart-splits.nvim",
+  { "mrjones2014/smart-splits.nvim", event = "WinNew" },
 }
