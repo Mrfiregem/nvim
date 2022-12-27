@@ -1,8 +1,20 @@
+local snippy_setup_args = {
+  mappings = {
+    is = {
+      ["<tab>"] = "expand_or_advance",
+      ["<s-tab>"] = "previous",
+    },
+    nx = {
+      ["<leader>x"] = "cut_text",
+    },
+  },
+}
+
 local M = {
   "hrsh7th/nvim-cmp",
   dependencies = {
     -- Snippet engine
-    { "dcampos/nvim-snippy", dependencies = { "honza/vim-snippets" } },
+    { "dcampos/nvim-snippy", dependencies = { "honza/vim-snippets" }, config = snippy_setup_args },
     -- Completion sources
     "dcampos/cmp-snippy",
     "hrsh7th/cmp-buffer",
