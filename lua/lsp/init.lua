@@ -3,7 +3,6 @@ local afn = require("lsp.on_attach")
 local cap = require("cmp_nvim_lsp").default_capabilities()
 
 -- Shell scripting
-lc.bashls.setup { on_attach = afn, capabilities = cap }
 lc.taplo.setup { on_attach = afn, capabilities = cap }
 
 -- Webdev

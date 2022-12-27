@@ -19,7 +19,7 @@ function M.config()
       -- : Bash
       nb.code_actions.shellcheck,
       nb.diagnostics.shellcheck,
-      nb.formatting.shfmt,
+      nb.formatting.shfmt.with { extra_args = { "-i", tostring(vim.opt.shiftwidth:get()), "-s" } },
       -- : Fish
       nb.diagnostics.fish,
       nb.formatting.fish_indent,
