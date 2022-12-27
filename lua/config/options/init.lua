@@ -4,7 +4,7 @@ local o = vim.opt
 require("config.keymaps")
 
 -- Set colorscheme
-vim.cmd([[colorscheme catppuccin-macchiato]])
+vim.cmd.colorscheme "catppuccin-macchiato"
 
 -- Show line numbers
 o.number = true
