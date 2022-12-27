@@ -31,6 +31,9 @@ function M.config()
       nb.diagnostics.pylint,
       nb.formatting.black,
       nb.formatting.isort,
+      -- Writing
+      nb.formatting.prettier,
+      nb.diagnostics.markdownlint,
     },
   }
 end
