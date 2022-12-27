@@ -21,7 +21,7 @@ wk.register {
   -- Popup information
   K = { vim.lsp.buf.hover, "Show Symbol Information" },
   ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
-  ["<c-d>"] = { vim.diagnostic.open_float, "Show Diagnostic Information" },
+  ["<c-t>"] = { vim.diagnostic.open_float, "Show Diagnostic Information" },
   -- Goto functions
   g = {
     D = { vim.lsp.buf.declaration, "Goto Symbol Declaration" },
