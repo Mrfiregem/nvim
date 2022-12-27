@@ -19,7 +19,7 @@ local M = {
     "dcampos/cmp-snippy",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-nvim-lsp",
+    { "hrsh7th/cmp-nvim-lsp", event = "LspAttach" },
     "hrsh7th/cmp-path",
     { "mtoohey31/cmp-fish", ft = "fish" },
   },
