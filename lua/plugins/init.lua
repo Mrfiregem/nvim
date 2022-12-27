@@ -1,16 +1,16 @@
 return {
   -- Declare keybinds and show possible keymaps on press
-  "folke/which-key.nvim",
+  { "folke/which-key.nvim", lazy = true },
 
   -- Configs for nvim's LSP client
-  "neovim/nvim-lspconfig",
+  { "neovim/nvim-lspconfig", event = "BufReadPost" },
 
   -- Colorschemes
-  { "catppuccin/nvim", name = "catppuccin" },
-  "rebelot/kanagawa.nvim",
+  { "catppuccin/nvim", name = "catppuccin", lazy = true },
+  { "rebelot/kanagawa.nvim", lazy = true },
 
   -- Git / version control
-  { "lewis6991/gitsigns.nvim", config = true, lazy = false },
+  { "lewis6991/gitsigns.nvim", config = true, event = "BufReadPost" },
 
   -- Comment out lines or blocks quickly
   { "numToStr/Comment.nvim", config = true, keys = { "gcc", "gbc", "gc", "gb" } },
