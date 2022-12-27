@@ -16,7 +16,7 @@ return {
   { "numToStr/Comment.nvim", config = true, keys = { "gcc", "gbc", "gc", "gb" } },
 
   -- Configure LSP for neovim configuration
-  { "folke/neodev.nvim", config = true, lazy = false },
+  { "folke/neodev.nvim", config = true, ft = "lua" },
 
   -- Better window navigation functions
   { "mrjones2014/smart-splits.nvim", event = "WinNew" },
