@@ -9,7 +9,23 @@ wk.register({
   l = {
     name = "LSP Actions",
     f = format_keymap,
-    r = { function() vim.lsp.buf.rename() end, "Rename Variable" },
-    a = { function() vim.lsp.buf.code_action() end, "Code Action" },
+    r = { vim.lsp.buf.rename, "Rename Variable" },
+    a = { vim.lsp.buf.code_action, "Run Code Action" },
   },
 }, { prefix = "<leader>" })
+
+wk.register {
+  -- Navigate to diagnostic messages
+  ["[d"] = { vim.diagnostic.goto_prev, "Goto Previous Diagnostic" },
+  ["]d"] = { vim.diagnostic.goto_next, "Goto Next Diagnostic" },
+  -- Popup information
+  K = { vim.lsp.buf.hover, "Show Symbol Information" },
+  ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
+  ["<c-d>"] = { vim.diagnostic.open_float, "Show Diagnostic Information" },
+  -- Goto functions
+  g = {
+    D = { vim.lsp.buf.declaration, "Goto Symbol Declaration" },
+    d = { vim.lsp.buf.definition, "Goto Symbol Definition" },
+    I = { vim.lsp.buf.implementation, "List All Symbol Implementations" },
+  },
+}
