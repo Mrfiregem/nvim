@@ -29,3 +29,7 @@ wk.register {
     I = { vim.lsp.buf.implementation, "List All Symbol Implementations" },
   },
 }
+
+wk.register({
+  ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
+}, { mode = "s" })
