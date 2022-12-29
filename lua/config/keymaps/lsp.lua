@@ -4,7 +4,7 @@ local format_keymap = {
   "Format File",
 }
 
-wk.register({
+local leader_keymaps = {
   f = format_keymap,
   l = {
     name = "LSP Actions",
@@ -12,9 +12,9 @@ wk.register({
     r = { vim.lsp.buf.rename, "Rename Variable" },
     a = { vim.lsp.buf.code_action, "Run Code Action" },
   },
-}, { prefix = "<leader>" })
+}
 
-wk.register {
+local normal_keymaps = {
   -- Navigate to diagnostic messages
   ["[d"] = { vim.diagnostic.goto_prev, "Goto Previous Diagnostic" },
   ["]d"] = { vim.diagnostic.goto_next, "Goto Next Diagnostic" },
@@ -27,8 +27,13 @@ wk.register {
     D = { vim.lsp.buf.declaration, "Goto Symbol Declaration" },
     d = { vim.lsp.buf.definition, "Goto Symbol Definition" },
     I = { vim.lsp.buf.implementation, "List All Symbol Implementations" },
+    r = { vim.lsp.buf.references, "List All References to Symbol" },
   },
 }
+
+wk.register(leader_keymaps, { prefix = "<leader>" })
+
+wk.register(normal_keymaps)
 
 wk.register({
   ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },

@@ -1,8 +1,6 @@
 local wk = require("which-key")
 
--- '<leader>' keybinds
-wk.register({
-  [" "] = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
+local leader_keymaps = {
   t = {
     name = "Telescope",
     t = { "<cmd>Telescope<cr>", "Search Builtins" },
@@ -11,12 +9,23 @@ wk.register({
     g = { "<cmd>Telescope live_grep<cr>", "Grep Files In PWD" },
   },
   cd = { function() vim.cmd.cd(vim.fn.expand("%:p:h")) end, "Set CWD to current file's parent" },
-}, { prefix = "<leader>" })
+}
 
--- Window navigation
-local groupid_smart_splits = vim.api.nvim_create_augroup("SmartSplits", {})
+local normal_keymaps = {
+  ["<c-l>"] = "Clear Highlight",
+  ["<c-c>"] = { function() vim.api.nvim_buf_delete(0, {}) end, "Delete buffer" },
+}
+
+wk.register(leader_keymaps, { prefix = "<leader>" })
+
+-- File-related mappings
+wk.register(normal_keymaps)
+
+-- Window-related keymaps
+-- : Only loaded when a new window is created
+local augroup_id = vim.api.nvim_create_augroup("SmartSplits", {})
 vim.api.nvim_create_autocmd("WinNew", {
-  group = groupid_smart_splits,
+  group = augroup_id,
   pattern = "*",
   callback = function()
     local sms = require("smart-splits")
