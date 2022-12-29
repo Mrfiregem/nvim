@@ -6,6 +6,9 @@ return {
   -- Configs for nvim's LSP client
   { "neovim/nvim-lspconfig", event = "BufReadPost" },
 
+  -- Show LSP function signatures
+  { "ray-x/lsp_signature.nvim", lazy = true },
+
   -- Colorschemes
   { "catppuccin/nvim", name = "catppuccin", lazy = true },
   { "rebelot/kanagawa.nvim", lazy = true },
