@@ -1,10 +1,7 @@
 local o = vim.opt
 
--- Set keymaps
-require("config.keymaps")
-
 -- Set colorscheme
-vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme("catppuccin-macchiato")
 
 -- Show line numbers
 o.number = true

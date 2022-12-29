@@ -6,7 +6,7 @@ vim.g.maplocalleader = ","
 require("config.lazy")
 
 -- Load global options, keymaps, etc.
-require("config.options")
+require("config")
 
 -- LSP server configurations
 require("lsp")
