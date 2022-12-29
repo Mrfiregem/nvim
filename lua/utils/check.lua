@@ -2,8 +2,10 @@ local M = {}
 
 ---Determine if the current file is in a git repository
 ---@return boolean
-M.in_git_repo = function()
-  vim.fn.system(string.format("git -C %s rev-parse --git-dir &>/dev/null", vim.fn.shellescape(vim.fn.expand("%:p:h"))))
+function M.in_git_repo()
+  local cfile = vim.fn.shellescape(vim.fn.expand("%:p:h"))
+  local git_cmd = string.format("git -C %s rev-parse --git-dir &>/dev/null", cfile)
+  vim.fn.system(git_cmd)
   return vim.v.shell_error == 0
 end
 
