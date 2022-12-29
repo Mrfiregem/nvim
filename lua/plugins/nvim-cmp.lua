@@ -4,7 +4,7 @@ local snippy_setup_args = {
       ["<tab>"] = "expand_or_advance",
       ["<s-tab>"] = "previous",
     },
-    nx = {
+    x = {
       ["<leader>x"] = "cut_text",
     },
   },
