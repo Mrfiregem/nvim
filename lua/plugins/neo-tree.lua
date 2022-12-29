@@ -9,8 +9,8 @@ local M = {
   },
   cmd = "Neotree",
   keys = {
-    { "<leader>d", "<cmd>NeoTreeFocusToggle<cr>", desc = "Focus or open Neotree window" },
-    { "<leader>D", "<cmd>NeoTreeRevealToggle<cr>", desc = "Show current file in Neotree" },
+    { "<leader>d", "<cmd>Neotree focus<cr>", desc = "Focus or open Neotree window" },
+    { "<leader>D", "<cmd>Neotree reveal<cr>", desc = "Show current file in Neotree" },
   },
   lazy = false,
 }
