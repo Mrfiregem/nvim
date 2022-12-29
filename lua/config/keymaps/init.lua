@@ -10,6 +10,7 @@ wk.register({
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     g = { "<cmd>Telescope live_grep<cr>", "Grep Files In PWD" },
   },
+  cd = { function() vim.cmd.cd(vim.fn.expand("%:p:h")) end, "Set CWD to current file's parent" },
 }, { prefix = "<leader>" })
 
 -- Window navigation
