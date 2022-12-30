@@ -54,16 +54,16 @@ vim.api.nvim_create_autocmd("WinNew", {
     local sms = require("smart-splits")
     wk.register {
       -- Resize windows
-      ["<a-h>"] = { sms.resize_left, "Resize split left" },
-      ["<a-j>"] = { sms.resize_down, "Resize split down" },
-      ["<a-k>"] = { sms.resize_up, "Resize split up" },
-      ["<a-l>"] = { sms.resize_right, "Resize split right" },
-      ["<a-=>"] = { "<c-w>=", "Eqully resize all splits" },
+      ["<c-h>"] = { sms.resize_left, "Resize split left" },
+      ["<c-j>"] = { sms.resize_down, "Resize split down" },
+      ["<c-k>"] = { sms.resize_up, "Resize split up" },
+      ["<c-l>"] = { sms.resize_right, "Resize split right" },
+      ["<c-=>"] = { "<c-w>=", "Eqully resize all splits" },
       -- Navigate windows
-      ["<c-h>"] = { sms.move_cursor_left, "Navigate to split left" },
-      ["<c-j>"] = { sms.move_cursor_down, "Navigate to split down" },
-      ["<c-k>"] = { sms.move_cursor_up, "Navigate to split up" },
-      ["<c-l>"] = { sms.move_cursor_right, "Navigate to split right" },
+      ["<a-h>"] = { sms.move_cursor_left, "Navigate to split left" },
+      ["<a-j>"] = { sms.move_cursor_down, "Navigate to split down" },
+      ["<a-k>"] = { sms.move_cursor_up, "Navigate to split up" },
+      ["<a-l>"] = { sms.move_cursor_right, "Navigate to split right" },
       -- Modify window layout
       ["<a-H>"] = { "<c-w>H", "Move split left" },
       ["<a-J>"] = { "<c-w>J", "Move split down" },
