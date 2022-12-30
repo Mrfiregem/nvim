@@ -19,7 +19,6 @@ M.ts_langs = {
   "jsonc",
   "latex",
   "lua",
-  "lua",
   "python",
   "rust",
   "teal",
