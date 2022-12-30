@@ -24,4 +24,7 @@ return {
 
   -- Better window navigation functions
   { "mrjones2014/smart-splits.nvim", event = "WinNew" },
+
+  -- Auto-close delimiter characters (e.g. ", ', <, etc.)
+  { "windwp/nvim-autopairs", config = {}, event = "BufReadPost" },
 }
