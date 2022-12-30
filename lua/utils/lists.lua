@@ -13,6 +13,7 @@ M.ts_langs = {
   "gdscript",
   "go",
   "html",
+  "javascript",
   "jq",
   "json",
   "jsonc",
