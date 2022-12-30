@@ -32,4 +32,7 @@ function M.init_autoroot(cfg)
   vim.api.nvim_create_autocmd("BufEnter", { group = autoroot_augroup, callback = set_root })
 end
 
+---Print an empty message without saving to message history
+function M.clear_statusline_msg() vim.api.nvim_echo({ { "" } }, false, {}) end
+
 return M
