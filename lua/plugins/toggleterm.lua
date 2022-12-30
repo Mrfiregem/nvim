@@ -11,7 +11,11 @@ function M.config()
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new { cmd = "lazygit", hidden = true, direction = "float", dir = "git_dir" }
   vim.api.nvim_create_user_command("Lazygit", function()
-    if require("utils.check").in_git_repo() then lazygit:toggle() end
+    if require("utils.check").in_git_repo() then
+      lazygit:toggle()
+    else
+      vim.api.nvim_echo({ { "Error: Not in a git repo", "ErrorMsg" } }, true, {})
+    end
   end, {})
 end
 
