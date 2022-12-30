@@ -1,7 +1,7 @@
 local wk = require("which-key")
 
 local leader_keymaps = {
-  t = {
+  s = {
     name = "Telescope",
     t = { "<cmd>Telescope<cr>", "Search Builtins" },
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
@@ -9,6 +9,10 @@ local leader_keymaps = {
     g = { "<cmd>Telescope live_grep<cr>", "Grep Files In PWD" },
   },
   cd = { function() vim.cmd.cd(vim.fn.expand("%:p:h")) end, "Set CWD to current file's parent" },
+  t = {
+    name = "LazyTerm",
+    g = { "<cmd>Lazygit<cr>", "Open lazygit if in git repo" },
+  },
 }
 
 local normal_keymaps = {

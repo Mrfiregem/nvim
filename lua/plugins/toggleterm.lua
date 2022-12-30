@@ -1,7 +1,7 @@
 local M = {
   "akinsho/toggleterm.nvim",
-  keys = { [[<c-\>]], "<leader>g" },
-  cmd = { "ToggleTerm", "ToggleTermToggleAll" },
+  keys = { [[<c-\>]] },
+  cmd = { "ToggleTerm", "ToggleTermToggleAll", "Lazygit" },
 }
 
 function M.config()
@@ -10,11 +10,9 @@ function M.config()
 
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new { cmd = "lazygit", hidden = true, direction = "float", dir = "git_dir" }
-  local function lazygit_toggleterm()
+  vim.api.nvim_create_user_command("Lazygit", function()
     if require("utils.check").in_git_repo() then lazygit:toggle() end
-  end
-
-  vim.keymap.set("n", "<leader>g", lazygit_toggleterm, { noremap = true, silent = true, desc = "Show lazygit" })
+  end, {})
 end
 
 return M
