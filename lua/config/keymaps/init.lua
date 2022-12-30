@@ -13,6 +13,14 @@ local leader_keymaps = {
     name = "LazyTerm",
     g = { "<cmd>Lazygit<cr>", "Open lazygit if in git repo" },
   },
+  g = {
+    name = "Gitsigns",
+    u = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
+    d = { "<cmd>Gitsigns diffthis<cr>", "Vimdiff current file" },
+    b = { "<cmd>Gitsigns blame_line<cr>", "Git blame the current line" },
+    h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk at cursor" },
+    l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle inline git blame at eol" },
+  },
 }
 
 local normal_keymaps = {
@@ -27,6 +35,8 @@ local normal_keymaps = {
     end,
     "Delete buffer",
   },
+  ["[g"] = { "<cmd>Gitsigns next_hunk<cr>", "Goto next hunk" },
+  ["]g"] = { "<cmd>Gitsigns prev_hunk<cr>", "Goto previous hunk" },
 }
 
 wk.register(leader_keymaps, { prefix = "<leader>" })
