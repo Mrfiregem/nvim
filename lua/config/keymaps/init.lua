@@ -17,7 +17,16 @@ local leader_keymaps = {
 
 local normal_keymaps = {
   ["<c-l>"] = "Clear Highlight",
-  ["<c-c>"] = { function() vim.api.nvim_buf_delete(0, {}) end, "Delete buffer" },
+  ["<c-c>"] = {
+    function()
+      if vim.api.nvim_buf_get_name(0) == "" then
+        vim.cmd.quit()
+      else
+        vim.api.nvim_buf_delete(0, {})
+      end
+    end,
+    "Delete buffer",
+  },
 }
 
 wk.register(leader_keymaps, { prefix = "<leader>" })
