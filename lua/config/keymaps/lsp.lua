@@ -35,6 +35,7 @@ wk.register(leader_keymaps, { prefix = "<leader>" })
 
 wk.register(normal_keymaps)
 
+-- Keymaps used in select and insert mode
 wk.register({
   ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
-}, { mode = "s" })
+}, { mode = { "s", "i" } })
