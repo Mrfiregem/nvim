@@ -1,17 +1,10 @@
----Format buffer and write it
----@param bufnr integer
-local function format_write(bufnr)
-  vim.lsp.buf.format { async = false }
-  vim.api.nvim_buf_call(bufnr, function() vim.cmd("silent! write") end)
-end
-
----comment
+---Function run when LSP server connects to a buffer
 ---@param client table
 ---@param bufnr integer
-return function(client, bufnr) -- Takes client, buffer_number
+return function(client, bufnr)
   -- Print message to ':messages' list
   vim.api.nvim_echo({ { "Connecting LSP client: ", "Title" }, { client.name, "Normal" } }, true, {})
-  vim.api.nvim_echo({ { "" } }, false, {}) -- Clear statusline
+  require('utils.functions').clear_statusline_msg()
 
   -- Create autocmd that formats file in write
   local augroup_id = vim.api.nvim_create_augroup("LspOnAttach", {})
@@ -24,9 +17,6 @@ return function(client, bufnr) -- Takes client, buffer_number
 
   -- Add LSP-specific keymaps
   require("config.keymaps.lsp")
-
-  -- Add ':FormatWrite' command to buffers with LSP attached
-  vim.api.nvim_buf_create_user_command(bufnr, "FormatWrite", function() format_write(bufnr) end, { bar = true })
 
   -- Show function signature popups in insert mode
   require("lsp_signature").on_attach({ border = "rounded", hint_prefix = " " }, bufnr)
