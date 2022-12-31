@@ -1,6 +1,15 @@
 local wk = require("which-key")
 
 local leader_keymaps = {
+  c = { function() vim.cmd.cd(vim.fn.expand("%:p:h")) end, "Set CWD to current file's parent" },
+  g = {
+    name = "Gitsigns",
+    u = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
+    d = { "<cmd>Gitsigns diffthis<cr>", "Vimdiff current file" },
+    b = { "<cmd>Gitsigns blame_line<cr>", "Git blame the current line" },
+    h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk at cursor" },
+    l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle inline git blame at eol" },
+  },
   q = { function() require("utils.functions").help_split() end, "Show help page for current word" },
   s = {
     name = "Telescope",
@@ -9,18 +18,13 @@ local leader_keymaps = {
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     g = { "<cmd>Telescope live_grep<cr>", "Grep Files In PWD" },
   },
-  cd = { function() vim.cmd.cd(vim.fn.expand("%:p:h")) end, "Set CWD to current file's parent" },
   t = {
     name = "LazyTerm",
     g = { "<cmd>Lazygit<cr>", "Open lazygit if in git repo" },
   },
-  g = {
-    name = "Gitsigns",
-    u = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
-    d = { "<cmd>Gitsigns diffthis<cr>", "Vimdiff current file" },
-    b = { "<cmd>Gitsigns blame_line<cr>", "Git blame the current line" },
-    h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk at cursor" },
-    l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle inline git blame at eol" },
+  w = {
+    function() vim.api.nvim_set_current_win(require("window-picker").pick_window()) end,
+    "Focus selected window",
   },
 }
 
