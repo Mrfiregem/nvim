@@ -1,6 +1,7 @@
 local wk = require("which-key")
 
 local leader_keymaps = {
+  q = { function() require("utils.functions").help_split() end, "Show help page for current word" },
   s = {
     name = "Telescope",
     t = { "<cmd>Telescope<cr>", "Search Builtins" },

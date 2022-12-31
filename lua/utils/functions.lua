@@ -35,4 +35,21 @@ end
 ---Print an empty message without saving to message history
 function M.clear_statusline_msg() vim.api.nvim_echo({ { "" } }, false, {}) end
 
+---Run ':help' for the word under the cursor
+---@param query? string
+---@param cfg? {man_fts: string[]}
+function M.help_split(query, cfg)
+  query = query or vim.fn.expand("<cword>")
+  cfg = cfg or {}
+  cfg.man_fts = cfg.man_fts or { "sh", "fish" }
+
+  local ft = vim.opt.filetype:get()
+
+  if vim.tbl_contains(cfg.man_fts, ft) then
+    vim.cmd.Man(query)
+  else
+    vim.cmd.help(query)
+  end
+end
+
 return M
