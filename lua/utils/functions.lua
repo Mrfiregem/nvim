@@ -1,5 +1,12 @@
 local M = {}
 
+---Get program from shebang
+---@return string|nil
+function M.determine_sh_flavor()
+  local shebang = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1] ---@type string
+  return shebang:match([[^#!.-%s(.+)$]])
+end
+
 ---Automatically change root to directory containing 'root_files'
 ---
 ---root_files: List of file names indicating the root directory
@@ -45,11 +52,13 @@ function M.help_split(query, cfg)
 
   local ft = vim.opt.filetype:get()
 
+  local cmd
   if vim.tbl_contains(cfg.man_fts, ft) then
-    vim.cmd.Man(query)
+    cmd = "Man"
   else
-    vim.cmd.help(query)
+    cmd = "help"
   end
+  vim.cmd { cmd = cmd, args = { query }, mods = { emsg_silent = true } }
 end
 
 return M
