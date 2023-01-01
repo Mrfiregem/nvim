@@ -26,6 +26,15 @@ local leader_keymaps = {
     function() vim.api.nvim_set_current_win(require("window-picker").pick_window()) end,
     "Focus selected window",
   },
+  x = {
+    name = "Neo-Tree",
+    F = { "<cmd>Neotree reveal<cr>", "Show current file in Neo-tree" },
+    f = { "<cmd>Neotree toggle reveal<cr>", "Toggle showing current file in Neo-tree" },
+    g = { "<cmd>Neotree git_status<cr>", "Show modified git files in CWD" },
+    O = { "<cmd>Neotree<cr>", "Open Neo-tree" },
+    o = { "<cmd>Neotree toggle<cr>", "Toggle opening Neo-tree" },
+    x = { "<cmd>Neotree close<cr>", "Close Neo-tree" },
+  },
 }
 
 local normal_keymaps = {
