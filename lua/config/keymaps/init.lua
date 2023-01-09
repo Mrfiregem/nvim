@@ -23,7 +23,7 @@ local leader_keymaps = {
     g = { "<cmd>Lazygit<cr>", "Open lazygit if in git repo" },
   },
   w = {
-    function() vim.api.nvim_set_current_win(require("window-picker").pick_window()) end,
+    function() vim.api.nvim_set_current_win(require("window-picker").pick_window() or vim.api.nvim_get_current_win()) end,
     "Focus selected window",
   },
   x = {
@@ -49,8 +49,8 @@ local normal_keymaps = {
     end,
     "Delete buffer",
   },
-  ["[g"] = { "<cmd>Gitsigns next_hunk<cr>", "Goto next hunk" },
-  ["]g"] = { "<cmd>Gitsigns prev_hunk<cr>", "Goto previous hunk" },
+  ["]g"] = { "<cmd>Gitsigns next_hunk<cr>", "Goto next hunk" },
+  ["[g"] = { "<cmd>Gitsigns prev_hunk<cr>", "Goto previous hunk" },
   ["]q"] = { "<cmd>cnext<cr>", "Goto next quickfix item" },
   ["[q"] = { "<cmd>cprev<cr>", "Goto previous quickfix item" },
   ["]b"] = { "<cmd>bnext<cr>", "Goto next buffer" },
