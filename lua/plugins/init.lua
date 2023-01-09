@@ -2,23 +2,22 @@ local uc = require("utils.check")
 return {
   -- Colorschemes
   { "catppuccin/nvim", name = "catppuccin", lazy = true },
-  { "rebelot/kanagawa.nvim", lazy = true },
 
   -- LSP-related plugins
   -- : Configs for nvim's LSP client
-  { "neovim/nvim-lspconfig", event = "BufReadPost" },
+  { "neovim/nvim-lspconfig", event = { "BufReadPost", "BufNewFile" } },
   -- : Show LSP function signatures
   { "ray-x/lsp_signature.nvim", lazy = true },
   -- : Configure LSP for neovim configuration
-  { "folke/neodev.nvim", config = true, cond = uc.in_config_dir },
+  { "folke/neodev.nvim", config = true },
   -- : Better looking ui elements (not just LSP)
-  "stevearc/dressing.nvim",
+  { "stevearc/dressing.nvim", lazy = true },
 
   -- Ease-of-use text plugins
   -- : Comment out lines or blocks quickly
   { "numToStr/Comment.nvim", config = true, keys = { "gcc", "gbc", "gc", "gb" } },
   -- : Auto-close delimiter characters (e.g. ", ', <, etc.)
-  { "windwp/nvim-autopairs", config = {}, event = "BufReadPost" },
+  { "windwp/nvim-autopairs", config = {}, event = { "BufReadPost", "BufNewFile" } },
 
   -- Keymaps and command configuration helpers
   -- : Declare keybinds and show possible keymaps on press
@@ -27,7 +26,7 @@ return {
     "mrjones2014/legendary.nvim",
     config = { which_key = { auto_register = true } },
     keys = { { "<c-p>", "<cmd>Legendary<cr>", desc = "Show list of all commands tied to a keymap" } },
-    lazy = false,
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   -- Git / version control
