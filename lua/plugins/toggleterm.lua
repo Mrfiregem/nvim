@@ -1,4 +1,4 @@
-local toggle_key = "<c-z>"
+local toggle_key = "<C-z>"
 
 local M = {
   "akinsho/toggleterm.nvim",
@@ -18,7 +18,7 @@ function M.config()
     dir = "git_dir",
     on_open = function(term)
       vim.cmd.startinsert { bang = true }
-      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<cr>", { noremap = true, silent = true })
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<Cmd>close<cr>", { noremap = true, silent = true })
     end,
   }
   vim.api.nvim_create_user_command("Lazygit", function()

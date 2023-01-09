@@ -2,10 +2,10 @@ local snippy_setup_args = {
   mappings = {
     is = {
       ["<tab>"] = "expand_or_advance",
-      ["<s-tab>"] = "previous",
+      ["<S-tab>"] = "previous",
     },
     x = {
-      ["<leader>x"] = "cut_text",
+      ["<Leader>x"] = "cut_text",
     },
   },
 }

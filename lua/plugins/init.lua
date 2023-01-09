@@ -25,7 +25,7 @@ return {
   {
     "mrjones2014/legendary.nvim",
     config = { which_key = { auto_register = true } },
-    keys = { { "<c-p>", "<cmd>Legendary<cr>", desc = "Show list of all commands tied to a keymap" } },
+    keys = { { "<C-p>", "<Cmd>Legendary<cr>", desc = "Show list of all commands tied to a keymap" } },
     event = { "BufReadPost", "BufNewFile" },
   },
 

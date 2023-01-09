@@ -20,8 +20,8 @@ local normal_keymaps = {
   ["]d"] = { vim.diagnostic.goto_next, "Goto Next Diagnostic" },
   -- Popup information
   K = { vim.lsp.buf.hover, "Show Symbol Information" },
-  ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
-  ["<c-t>"] = { vim.diagnostic.open_float, "Show Diagnostic Information" },
+  ["<C-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
+  ["<C-t>"] = { vim.diagnostic.open_float, "Show Diagnostic Information" },
   -- Goto functions
   g = {
     D = { vim.lsp.buf.declaration, "Goto Symbol Declaration" },
@@ -31,11 +31,11 @@ local normal_keymaps = {
   },
 }
 
-wk.register(leader_keymaps, { prefix = "<leader>" })
+wk.register(leader_keymaps, { prefix = "<Leader>" })
 
 wk.register(normal_keymaps)
 
 -- Keymaps used in select and insert mode
 wk.register({
-  ["<c-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
+  ["<C-s>"] = { vim.lsp.buf.signature_help, "List Signature Information" },
 }, { mode = { "s", "i" } })

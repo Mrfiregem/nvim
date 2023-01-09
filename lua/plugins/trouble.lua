@@ -3,7 +3,7 @@ local M = {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   cmd = "Trouble",
   keys = {
-    { "<leader>T", "<cmd>Trouble<cr>", desc = "Show LSP diagnostics" },
+    { "<Leader>T", "<Cmd>Trouble<cr>", desc = "Show LSP diagnostics" },
   },
 }
 
