@@ -29,6 +29,10 @@ return {
     event = { "BufReadPost", "BufNewFile" },
   },
 
+  -- Filetype-specific plugins
+  -- : Nushell
+  { "LhKipp/nvim-nu", config = {}, event = { "BufNewFile", "BufReadPost" } },
+
   -- Git / version control
   { "lewis6991/gitsigns.nvim", config = true, cond = uc.in_git_repo, event = "BufReadPost" },
 
