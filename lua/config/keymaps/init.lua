@@ -1,6 +1,7 @@
 local wk = require("which-key")
 
 local leader_keymaps = {
+  [" "] = { vim.cmd.nohlsearch, "Clear highlight from previous search" },
   c = { function() vim.cmd.cd(vim.fn.expand("%:p:h")) end, "Set CWD to current file's parent" },
   g = {
     name = "Gitsigns",
