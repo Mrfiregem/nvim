@@ -51,6 +51,10 @@ local normal_keymaps = {
   },
   ["[g"] = { "<cmd>Gitsigns next_hunk<cr>", "Goto next hunk" },
   ["]g"] = { "<cmd>Gitsigns prev_hunk<cr>", "Goto previous hunk" },
+  ["]q"] = { "<cmd>cnext<cr>", "Goto next quickfix item" },
+  ["[q"] = { "<cmd>cprev<cr>", "Goto previous quickfix item" },
+  ["]b"] = { "<cmd>bnext<cr>", "Goto next buffer" },
+  ["[b"] = { "<cmd>bprev<cr>", "Goto previous buffer" },
 }
 
 wk.register(leader_keymaps, { prefix = "<leader>" })
