@@ -16,14 +16,14 @@ local M = {
     -- Snippet engine
     { "dcampos/nvim-snippy", dependencies = { "honza/vim-snippets" }, config = snippy_setup_args },
     -- Completion sources
-    "dcampos/cmp-snippy",
+    { "dcampos/cmp-snippy" },
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
-    { "hrsh7th/cmp-nvim-lsp", event = "LspAttach" },
+    { "hrsh7th/cmp-nvim-lsp" },
     "hrsh7th/cmp-path",
     { "mtoohey31/cmp-fish", ft = "fish" },
   },
-  event = "BufReadPost",
+  event = "LspAttach",
 }
 
 function M.config()
@@ -38,6 +38,7 @@ function M.config()
     },
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
+      { name = "neorg" },
       { name = "snippy" },
       { name = "fish" },
     }, {
