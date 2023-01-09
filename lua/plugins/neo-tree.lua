@@ -8,11 +8,6 @@ local M = {
     { "s1n7ax/nvim-window-picker", config = true },
   },
   cmd = "Neotree",
-  keys = {
-    { "<leader>d", "<cmd>Neotree focus<cr>", desc = "Focus or open Neotree window" },
-    { "<leader>D", "<cmd>Neotree reveal<cr>", desc = "Show current file in Neotree" },
-  },
-  lazy = false,
 }
 
 function M.config()
@@ -21,7 +16,7 @@ function M.config()
   vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
   vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
   vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
-  require("neo-tree").setup { filesystem = { hijack_netrw_behavior = "open_default" } }
+  require("neo-tree").setup { filesystem = { hijack_netrw_behavior = "open_current" } }
 end
 
 return M
