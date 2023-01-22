@@ -7,15 +7,13 @@ return {
   -- : Configs for nvim's LSP client
   { "neovim/nvim-lspconfig", event = { "BufReadPost", "BufNewFile" } },
   -- : Configure LSP for neovim configuration
-  { "folke/neodev.nvim", config = true },
+  "folke/neodev.nvim",
   -- : Better looking ui elements (not just LSP)
   { "stevearc/dressing.nvim", lazy = true },
 
   -- Ease-of-use text plugins
   -- : Comment out lines or blocks quickly
   { "numToStr/Comment.nvim", config = true, keys = { "gcc", "gbc", "gc", "gb" } },
-  -- : Auto-close delimiter characters (e.g. ", ', <, etc.)
-  { "windwp/nvim-autopairs", config = {}, event = { "BufReadPost", "BufNewFile" } },
 
   -- Keymaps and command configuration helpers
   -- : Declare keybinds and show possible keymaps on press
