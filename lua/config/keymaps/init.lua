@@ -29,6 +29,8 @@ local leader_keymaps = {
   },
   x = {
     name = "Neo-Tree",
+    C = { "<Cmd>Neotree current<cr>", "Replace buffer with Neo-tree" },
+    c = { "<Cmd>Neotree toggle current<cr>", "Toggle replacing buffer with Neo-tree" },
     F = { "<Cmd>Neotree reveal<cr>", "Show current file in Neo-tree" },
     f = { "<Cmd>Neotree toggle reveal<cr>", "Toggle showing current file in Neo-tree" },
     g = { "<Cmd>Neotree git_status<cr>", "Show modified git files in CWD" },
@@ -73,16 +75,16 @@ vim.api.nvim_create_autocmd("WinNew", {
     local sms = require("smart-splits")
     wk.register {
       -- Resize windows
-      ["<C-h>"] = { sms.resize_left, "Resize split left" },
-      ["<C-j>"] = { sms.resize_down, "Resize split down" },
-      ["<C-k>"] = { sms.resize_up, "Resize split up" },
-      ["<C-l>"] = { sms.resize_right, "Resize split right" },
-      ["<C-=>"] = { "<c-w>=", "Eqully resize all splits" },
+      ["<M-h>"] = { sms.resize_left, "Resize split left" },
+      ["<M-j>"] = { sms.resize_down, "Resize split down" },
+      ["<M-k>"] = { sms.resize_up, "Resize split up" },
+      ["<M-l>"] = { sms.resize_right, "Resize split right" },
+      ["<M-=>"] = { "<c-w>=", "Eqully resize all splits" },
       -- Navigate windows
-      ["<M-h>"] = { sms.move_cursor_left, "Navigate to split left" },
-      ["<M-j>"] = { sms.move_cursor_down, "Navigate to split down" },
-      ["<M-k>"] = { sms.move_cursor_up, "Navigate to split up" },
-      ["<M-l>"] = { sms.move_cursor_right, "Navigate to split right" },
+      ["<C-h>"] = { sms.move_cursor_left, "Navigate to split left" },
+      ["<C-j>"] = { sms.move_cursor_down, "Navigate to split down" },
+      ["<C-k>"] = { sms.move_cursor_up, "Navigate to split up" },
+      ["<C-l>"] = { sms.move_cursor_right, "Navigate to split right" },
       -- Modify window layout
       ["<M-H>"] = { "<C-w>H", "Move split left" },
       ["<M-J>"] = { "<C-w>J", "Move split down" },
