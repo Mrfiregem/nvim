@@ -6,8 +6,6 @@ return {
   -- LSP-related plugins
   -- : Configs for nvim's LSP client
   { "neovim/nvim-lspconfig", event = { "BufReadPost", "BufNewFile" } },
-  -- : Show LSP function signatures
-  { "ray-x/lsp_signature.nvim", lazy = true },
   -- : Configure LSP for neovim configuration
   { "folke/neodev.nvim", config = true },
   -- : Better looking ui elements (not just LSP)
